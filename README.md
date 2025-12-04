@@ -22,3 +22,10 @@
 > 1. Entramos en el contenedor de php. `docker compose exec -it php bash`
 > 2. Es posible que tengamos que hacer `php artisan session:table` (puede que ya exista)
 > 3. Realizar una migración inicial: `php artisan migrate`
+
+> [!WARNING]
+>
+> Si Laravel lanza error `No application encryption key has been specified`:
+> 1. Asegurarnos de que existe el fichero .env en la raíz del proyecto
+> 2. Si no existe lo creamos y configuramos a partir de .env.example
+> 3. En el contenedor de php (`docker compose exec -it php bash`): ejecutamos `php artisan key:generate`
